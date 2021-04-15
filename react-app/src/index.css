@@ -1,0 +1,31 @@
+/* TODO Add site wide styles */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;0,500;1,100&display=swap");
+
+body{
+    margin: 0;
+    background-image: url(https://wallpaperaccess.com/full/1868700.jpg);
+}
+
+.OuterModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    border: none;
+  }
+  
+.InnerModal {
+    text-decoration: none;
+    height: 100%;
+    background: white;
+    height: fit-content;
+    border-radius: 20px;
+    /* position: fixed; */
+  }

@@ -1,0 +1,38 @@
+.frodocharacter__container{
+    display: flex;
+    width: 2000px;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+    background-color: #EFF7CF;
+    border-radius: 20px;
+}
+
+.frodocharacter__container > label{
+    font-family: Raleway;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.frodocharacter__container > p{
+    position: relative;
+    margin-right: 10px;
+    font-family: Raleway;
+    left: 0;
+}
+
+.frodocharacter__container > button{
+    position: inherit;
+    grid-row-start: 2;
+    border: none;
+    outline: none;
+    font-family: Raleway;
+    font-size: 30px;
+    border-radius: 100px;
+    /* padding: 10px 10px 10px 10px; */
+    background-color: #ABA361;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 20px 10px 20px;
+    width: auto;
+}

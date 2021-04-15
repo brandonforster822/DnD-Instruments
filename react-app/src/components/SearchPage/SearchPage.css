@@ -1,0 +1,13 @@
+.searchresult__container{
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 50px;
+}
+
+.searchresult__container > p{
+    font-family: Raleway;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,137 @@
+.navbar{
+    background-color: #EFF7CF;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar__container{
+    height: 100px;
+    margin: 0 10% 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarheader__container > h1{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 40px;
+    text-shadow: 5px 5px 10px;
+    cursor: pointer;
+}
+
+.navbarheader__container > h1:hover{
+    text-shadow: 10px 10px 10px;
+    transition: .5s;
+}
+
+.navbarheader__container {
+    display: flex;
+    justify-content: center;
+}
+
+.navbarsearch__input {
+    font-family: Raleway;
+    border: none;
+    background-color: #BAD9B5;
+    height: 50px;
+    width: 300px;
+    border-radius: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-weight: bold;
+    
+}
+
+.navbarsearch__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+}
+
+.navbarsearch__container i {
+    position: absolute;
+    right: 100px;
+    bottom: 17px;
+    cursor: pointer;
+}
+
+.navbaraccount__container {
+    display: flex;
+    justify-content: center;
+}
+
+.navbaraccount__container{
+    font-family: Raleway;
+    background-color: #BAD9B5;
+    width: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.account__dropdown:hover {
+    box-shadow: 0px 5px 15px 0.1px #484848;
+    transition: 0.5s;
+  }
+  
+  .account__dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    padding: 5px 5px 5px 10px;
+  }
+  
+  .dropdown__menu {
+    width: 130px;
+    position: absolute;
+    display: flex;
+    right: 525px;
+    top: 90px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0.1px #484848;
+  }
+  
+  .dropdown__list {
+    font-family: Raleway;
+    /* padding: 0 20px 0 20px; */
+    padding: 0;
+  }
+  
+  .dropdown__list > p {
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    width: 130px;
+  }
+  .dropdown__list > button {
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    width: 130px;
+    border: none;
+    background-color: white;
+    outline: none;
+    font-family: Raleway;
+    font-size: 16px;
+    text-align: start;
+  }
+  .dropdown__list > p:hover {
+    background-color: #b1eab8;
+    margin: 0px;
+  }
+  .dropdown__list > button:hover {
+    background-color: #b1eab8;
+    margin: 0px;
+  }

@@ -1,0 +1,62 @@
+.dicebox__container{
+    position: sticky;
+    background-color: #EFF7CF;
+    height: 150px;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 4px solid #ABA361;
+    border-radius: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dicebox__container img {
+    height: 150px;
+    box-shadow: 0px 0px 10px;
+    border-radius: 100%;
+    background-color: #A63446;
+}
+
+.dice__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice__container > h5 {
+    cursor: pointer;
+    position: absolute;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 40px;
+    color: #0C0A3E;
+    text-shadow: -1px 0 #BAD9B5, 0 1px #BAD9B5, 1px 0 #BAD9B5, 0 -1px #BAD9B5;
+
+}
+
+.dice__container > h5:hover {
+    font-size: 50px;
+    transition: .5s;
+}
+
+.result__container > h3 {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 70px;
+    text-shadow: -1px 0 #BAD9B5, 0 1px #BAD9B5, 1px 0 #BAD9B5, 0 -1px #BAD9B5;
+}
+
+.result__container{
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0C0A3E;
+    box-shadow: 0px 0px 10px;
+}
+

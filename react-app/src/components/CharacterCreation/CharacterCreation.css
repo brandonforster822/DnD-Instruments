@@ -1,0 +1,101 @@
+.characterform__container label{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 5px 5px 10px black;
+}
+
+.characterform__container > form{
+    margin-bottom: 100px;
+    display: grid;
+    width: 600px;
+    justify-items: center;
+    font-family: Raleway;
+}
+
+.characterform__container{
+    display: flex;
+    justify-content: center;
+}
+
+.characterform__container > form > input{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 80%;
+    background-color: #ABA361;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.characterform__container > form > textarea{
+    width: 80%;
+    height: 80px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: Raleway;
+    background-color: #ABA361;
+    font-size: 20px;
+    /* font-weight: bold; */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.characterform__container > form > select{
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: Raleway;
+    background-color: #ABA361;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.characterform__container > form > input:focus {
+    background-color: #EFF7CF;
+    transition: .5s;
+}
+
+.characterform__container > form > textarea:focus {
+    background-color: #EFF7CF;
+    transition: .5s;
+}
+
+.characterform__container > form > select:focus {
+    background-color: #EFF7CF;
+    transition: .5s;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .characterform__container > form > button{
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: Raleway;
+    background-color: #ABA361;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;;
+}
+
+.characterform__container > form > button:hover{
+    background-color: #EFF7CF;
+    transition: .5s;
+    cursor: pointer;
+}
