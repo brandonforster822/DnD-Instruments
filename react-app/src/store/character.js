@@ -5,6 +5,8 @@ const FETCH_LANGUAGES = "languages/query"
 const FETCH_SAVINGTHROWS = "savingthrows/query"
 const FETCH_SKILLS = "skills/query"
 const CREATE_CHARACTER = "character/create"
+const GET_USER_CHARACTERS = "character/get"
+const GET_ONE_CHARACTER = "character/getone"
 
 export const fetchAllClasses = (listArr) => {
     return {
@@ -43,12 +45,26 @@ export const fetchAllSkills = (listArr) => {
     }
 }
 
-export const createOneCharacter = () => {
+export const createOneCharacter = (data) => {
     return {
         type: CREATE_CHARACTER,
+        data,
     }
 }
 
+export const getUserCharacters = (characters) => {
+    return {
+        type: GET_USER_CHARACTERS,
+        payload: characters
+    }
+}
+
+export const getOneCharacter = (character) => {
+    return {
+        type: GET_ONE_CHARACTER,
+        payload: character
+    }
+}
 
 
 export const fetchAll = () => async (dispatch) => {
@@ -97,7 +113,8 @@ export const fetchAll = () => async (dispatch) => {
     dispatch(fetchAllSkills(skillsData))
 }
 
-export const createCharacter = (name, 
+export const createCharacter = (userId, 
+    name, 
     level, 
     characterClass, 
     race, 
@@ -122,35 +139,61 @@ export const createCharacter = (name,
         const res = await fetch('/api/character/create', {
             method: "POST",
             headers: {
-                "Content-type": "application",
+                "Content-Type": "application/json",
             },
-            body: {name: name, 
-                level: level, 
-                class: characterClass, 
-                race: race, 
-                alignment: alignment, 
-                proficiencies: proficiencies, 
-                personalityTraits: personalityTraits, 
-                ideals: ideals, 
-                bonds: bonds,
-                flaws: flaws,
-                strength: strength,
-                dex: dex,
-                constitution: constitution,
-                intelligence: intelligence,
-                wisdom: wisdom,
-                charisma: charisma,
-                savingThrowOne: savingThrowOne,
-                savingThrowTwo: savingThrowTwo,
-                skillOne: skillOne,
-                skillTwo: skillTwo,
-                skillThree: skillThree,
-                skillFour: skillFour  
-                }
+            body: JSON.stringify({
+                userId,
+                name, 
+                level, 
+                characterClass, 
+                race, 
+                alignment, 
+                proficiencies, 
+                personalityTraits, 
+                ideals, 
+                bonds,
+                flaws,
+                strength,
+                dex,
+                constitution,
+                intelligence,
+                wisdom,
+                charisma,
+                savingThrowOne,
+                savingThrowTwo,
+                skillOne,
+                skillTwo,
+                skillThree,
+                skillFour  
+                })
         })
-        const data = await res.json()
-        dispatch(createOneCharacter(data))
+        return await res.json()
 }
+
+export const getCharacters = (userId) => async (dispatch) => {
+    const res = await fetch('/api/character/get', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: userId,
+    })
+    const data = await res.json()
+    dispatch(getUserCharacters(data))
+}
+
+export const getCharacter = (characterId) => async (dispatch) => {
+    const res = await fetch('/api/character/getone', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: characterId,
+    })
+    const data = await res.json()
+    dispatch(getOneCharacter(data))
+}
+
 const initialState = {}
 
 const characterReducer = (state = initialState, action) => {
@@ -173,6 +216,12 @@ const characterReducer = (state = initialState, action) => {
             return newState
         case FETCH_SKILLS:
             newState = {...state, skills: action.payload}
+            return newState
+        case GET_USER_CHARACTERS:
+            newState = {...state, characters: action.payload}
+            return newState
+        case GET_ONE_CHARACTER:
+            newState = {...state, character: action.payload}
             return newState
         default:
             return state

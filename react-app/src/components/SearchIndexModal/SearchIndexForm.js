@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import SearchIndexModal from "."
 import { closeSearchIndex } from "../../store/modal"
+import "./searchIndex.css"
 
 
 const SearchIndexForm = () => {
@@ -20,15 +21,17 @@ const SearchIndexForm = () => {
     }, [searchResult])
 
     return(
-        <div>
+        <div className="search__index">
             {!resultLoaded && (
                 <p>loading</p>
             )}
-
+            {resultLoaded && (
+                <h2>{searchResult.name}</h2>
+            )}
             {resultLoaded && (Object.keys(searchResult).sort().map((searchInfo) => {
-                if (searchInfo === "url" || searchInfo === "index"){
+                if (searchInfo === "url" || searchInfo === "index" || searchInfo === "name"){
                     return
-                } else if (typeof searchResult[searchInfo] === "object"){
+                }else if (typeof searchResult[searchInfo] === "object"){
                     const categoryStringArray = searchInfo.split('_')
                     categoryStringArray[0] = capitalize(categoryStringArray[0])
                     const category = categoryStringArray.join(' ')
@@ -46,9 +49,7 @@ const SearchIndexForm = () => {
                             <p>{category}: {categoryArray[0][1]}</p>
                         )
                     } else {
-                        return (
-                            <p>hey</p>
-                        )
+                        return
                     }
         
                 } else {

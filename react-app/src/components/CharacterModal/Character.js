@@ -1,57 +1,59 @@
 import React from 'react'
 import {closeCharacter} from "../../store/modal"
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import "./Character.css"
 
 
 const Character = () => {
     const dispatch = useDispatch()
+    const character = useSelector((state) => state.character.character?.oneCharacter)
     return(
         <div className="frodocharacter__container">
-                <label>Name:</label>
-                <p>Frodo Baggins</p>
+            <div className={'name__container'}>
+                <h2>{character?.name}</h2>
+            </div>
                 <label>Level:</label>
-                <p>3</p>
+                <p>{character?.level}</p>
                 <label>Class:</label>
-                <p>Ranger</p>
+                <p>{character?.characterClass}</p>
                 <label>Race:</label>
-                <p>Halfling</p>
+                <p>{character?.race}</p>
                 <label>Alignment:</label>
-                <p>Lawful Good</p>
+                <p>{character?.alignment}</p>
                 <label>Proficiencies:</label>
-                <p>Power of will</p>
+                <p>{character?.proficiencies}</p>
                 <label>Personality Traits:</label>
-                <p>Selfless</p>
+                <p>{character?.traits}</p>
                 <label>Ideals:</label>
-                <p>Saving Middle Earth</p>
+                <p>{character?.ideals}</p>
                 <label>Bonds:</label>
-                <p>Samwise Gamgee</p>
+                <p>{character?.bonds}</p>
                 <label>Flaws:</label>
-                <p>Short</p>
+                <p>{character?.flaws}</p>
                 <label>Strength:</label>
-                <p>3</p>
+                <p>{character?.strength}</p>
                 <label>Dexterity:</label>
-                <p>6</p>
+                <p>{character?.dex}</p>
                 <label>Constitution:</label>
-                <p>3</p>
+                <p>{character?.constitution}</p>
                 <label>Intelligence:</label>
-                <p>4</p>
+                <p>{character?.intelligence}</p>
                 <label>Wisdom:</label>
-                <p>5</p>
+                <p>{character?.wisdom}</p>
                 <label>Charisma:</label>
-                <p>7</p>
+                <p>{character?.charisma}</p>
                 <label>Saving throw one:</label>
-                <p>DEX</p>
+                <p>{character?.saving__throw__one}</p>
                 <label>Saving throw two:</label>
-                <p>CHA</p>
+                <p>{character?.saving__throw__two}</p>
                 <label>Skill one:</label>
-                <p>Survival</p>
+                <p>{character?.skill_one}</p>
                 <label>Skill two:</label>
-                <p>Stealth</p>
+                <p>{character?.skill_two}</p>
                 <label>Skill three:</label>
-                <p>Persuasion</p>
+                <p>{character?.skill_three}</p>
                 <label>Skill four:</label>
-                <p>History</p>
+                <p>{character?.skill_four}</p>
                 <button onClick={()=> dispatch(closeCharacter())}>Close</button>
         </div>
     )

@@ -1,0 +1,8 @@
+.search__index > p {
+    font-family: Raleway
+}
+
+.search__index {
+    width: 400px;
+    padding: 15px;
+}

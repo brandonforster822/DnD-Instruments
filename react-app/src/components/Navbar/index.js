@@ -3,7 +3,7 @@ import { NavLink, useHistory, Redirect } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import "./Navbar.css"
 import * as searchActions from "../../store/search"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { openSignup, openLogin, openComingSoon } from "../../store/modal.js";
 
 const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
@@ -12,6 +12,7 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
   const [search, setSearch] = useState("")
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen(!open);
+  const sessionUsername = useSelector((state) => state.session.username)
   const handleSearch = (e) => {
     e.preventDefault()
     setLoaded(false)
@@ -19,6 +20,11 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
     dispatch(searchActions.apiSearch(search))
     console.log('test')
     history.push('/search')
+  }
+
+  const handleOpenLogin = () => {
+    toggle(!open)
+    dispatch(openLogin())
   }
 
   return (
@@ -36,13 +42,21 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
         <div className="navbarheader__container" >
           <h1 onClick={() => history.push('/')}>DnD Instruments</h1>
         </div>
-        <div className="navbaraccount__container">
+        {!authenticated && (
+          <div className="navbaraccount__container">
           <p onClick={() => toggle(!open)}>Account</p>
         </div>
+        )}
+        {authenticated && (
+          <div className="navbaraccount__container">
+          <p onClick={() => toggle(!open)}>Hello, {sessionUsername}</p>
+        </div>
+        )}
+        
         {open && !authenticated && (
             <div className="dropdown__menu">
               <ul className="dropdown__list">
-                <p onClick={() => dispatch(openLogin())}>Log in</p>
+                <p onClick={() => handleOpenLogin()}>Log in</p>
                 <p onClick={() => dispatch(openSignup())}>Sign up</p>
               </ul>
             </div>

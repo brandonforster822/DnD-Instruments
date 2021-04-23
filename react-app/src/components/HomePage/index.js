@@ -1,8 +1,9 @@
-import React from "react"
-import {useDispatch} from "react-redux"
+import React, {useEffect, useState} from "react"
+import {useDispatch, useSelector} from "react-redux"
 import {useHistory} from "react-router-dom"
 import { authenticate } from "../../services/auth.js";
 import { openSignup, openCharacter, openComingSoon } from "../../store/modal.js";
+import * as characterActions from "../../store/character"
 
 import "./HomePage.css"
 
@@ -10,6 +11,27 @@ import "./HomePage.css"
 const HomePage = ({authenticated, cheat}) => {
     const dispatch = useDispatch()
     const history = useHistory()
+    const [characterLoaded, setCharacterLoaded] = useState(false)
+    const characterArray = useSelector((state) => state.character.characters?.userCharacters)
+    
+    const handleOpenCharacter = (id) => {
+        dispatch(characterActions.getCharacter(id))
+        dispatch(openCharacter())
+    }
+    
+    useEffect(() => {
+        dispatch(characterActions.getCharacters(1))
+    }, [])
+
+    useEffect(() => {
+        if(characterArray !== undefined){
+            setCharacterLoaded(true)
+            console.log(characterArray)
+        } else {
+            setCharacterLoaded(false)
+        }
+    }, [characterArray])
+
     return (
         <div>
             {!authenticated && (
@@ -37,9 +59,16 @@ const HomePage = ({authenticated, cheat}) => {
                     <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png"/>
                 </div>
                 <div className="character__container">
-                    <button className='frodobutton' onClick={() => dispatch(openCharacter())}>Frodo Baggins</button>
-                    {cheat && (<button className='sambutton' onClick={() => dispatch(openCharacter())}>Samwise Gamgee</button>)}
-                    
+                    {/* <button className='frodobutton' onClick={() => dispatch(openCharacter())}>Frodo Baggins</button>
+                    {cheat && (<button className='sambutton' onClick={() => dispatch(openCharacter())}>Samwise Gamgee</button>)} */}
+                    {characterLoaded && (Object.keys(characterArray).sort().map((character) =>{
+                        console.log(character)
+                        return (
+                            
+                            <button onClick={() => handleOpenCharacter(characterArray[character].id)} className='frodobutton'>{characterArray[character].name}</button>
+                            
+                        )
+                    }))}
                 </div>
             </div>
             )}

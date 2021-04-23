@@ -7,11 +7,12 @@ const CharacterCreation = ({setCheat}) => {
     const history = useHistory()
     const dispatch = useDispatch()
     const characterObject = useSelector((state) => state.character)
+    const sessionId = useSelector((state) => state.session.id)
     const [name, setName] = useState('')
     const [level, setLevel] = useState(0)
     const [characterClass, setcharacterClass] = useState('barbarian')
-    const [race, setRace] = useState('')
-    const [alignment, setAlignment] = useState('')
+    const [race, setRace] = useState('dragonborn')
+    const [alignment, setAlignment] = useState('chaotic-evil')
     const [proficiencies, setProficiencies] = useState('')
     const [languages, setLanguages] = useState([])
     const [personalityTraits, setPersonalityTraits] = useState('')
@@ -24,24 +25,46 @@ const CharacterCreation = ({setCheat}) => {
     const [intelligence, setIntelligence] = useState(0)
     const [wisdom, setWisdom] = useState(0)
     const [charisma, setCharisma] = useState(0)
-    const [savingThrowOne, setSavingThrowOne] = useState('')
-    const [savingThrowTwo, setSavingThrowTwo] = useState('')
-    const [skillOne, setSkillOne] = useState('')
-    const [skillTwo, setSkillTwo] = useState('')
-    const [skillThree, setSkillThree] = useState('')
-    const [skillFour, setSkillFour] = useState('')
+    const [savingThrowOne, setSavingThrowOne] = useState('CHA')
+    const [savingThrowTwo, setSavingThrowTwo] = useState('CHA')
+    const [skillOne, setSkillOne] = useState('Acrobatics')
+    const [skillTwo, setSkillTwo] = useState('Acrobatics')
+    const [skillThree, setSkillThree] = useState('Acrobatics')
+    const [skillFour, setSkillFour] = useState('Acrobatics')
     useEffect(() => {
         dispatch(characterActions.fetchAll())
     },[])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        setCheat(true)
+        await dispatch(characterActions.createCharacter(sessionId, 
+            name, 
+            level, 
+            characterClass, 
+            race, 
+            alignment, 
+            proficiencies, 
+            personalityTraits, 
+            ideals, 
+            bonds, 
+            flaws, 
+            strength, 
+            dex, 
+            constitution,
+            intelligence,
+            wisdom,
+            charisma,
+            savingThrowOne,
+            savingThrowTwo,
+            skillOne,
+            skillTwo,
+            skillThree,
+            skillFour))
         history.push('/')
     }
     return(
         <div className="characterform__container">
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form onSubmit={(e) => handleSubmit(e)} action='' method='POST'>
                 <label>Name:</label>
                 <input onChange={(e) => setName(e.target.value)}type='text'/>
                 <label>Level:</label>

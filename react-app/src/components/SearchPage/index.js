@@ -17,7 +17,6 @@ const Search = ({loaded, setLoaded}) =>{
     }
 
     const handleOpenModal = (searchUrl) => {
-        console.log(searchUrl)
         dispatch(searchActions.returnOneSearch(searchUrl))
         dispatch(openSearchIndex())
     }

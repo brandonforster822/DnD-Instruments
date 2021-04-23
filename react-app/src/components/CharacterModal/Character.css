@@ -1,6 +1,9 @@
 .frodocharacter__container{
     display: flex;
-    width: 2000px;
+    justify-content: center;
+    width: 550px;
+    padding: 50px;
+    padding-right: 50px;
     flex-wrap: wrap;
     position: relative;
     align-items: center;
@@ -8,20 +11,34 @@
     border-radius: 20px;
 }
 
-.frodocharacter__container > label{
+.name__container{
+    position: absolute;
+    top: 0;
+    font-size: 25px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.frodocharacter__container > div {
+    display: flex;
+}
+
+.frodocharacter__container  label{
     font-family: Raleway;
     font-size: 20px;
     margin-left: 10px;
+    font-weight: bold;
+    margin-top: 25px;
 }
 
-.frodocharacter__container > p{
+.frodocharacter__container  p{
     position: relative;
     margin-right: 10px;
     font-family: Raleway;
     left: 0;
+    margin-top: 45px;
 }
 
-.frodocharacter__container > button{
+.frodocharacter__container  button{
     position: inherit;
     grid-row-start: 2;
     border: none;
@@ -36,3 +53,4 @@
     margin: 10px 20px 10px 20px;
     width: auto;
 }
+
