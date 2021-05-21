@@ -42,8 +42,10 @@
     outline: none;
     padding-left: 10px;
     font-weight: bold;
+    font-size: 20px;
     border: 1px solid lightgrey;
     transition: .5s;
+    padding-left: 20px;
 }
 
 .navbarsearch__input:hover{
@@ -59,13 +61,19 @@
     position: relative;
     margin-right: 20px;
     margin-left: 20px;
+    overflow: hidden;
 }
-
+.navbarsearchbutton__container {
+  background-color: black;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 0px;
+  top: 13px;
+}
 .navbarsearch__container i {
-    position: absolute;
-    right: 60px;
-    bottom: 17px;
     cursor: pointer;
+    color: white;
 }
 
 .navbaraccount__container {

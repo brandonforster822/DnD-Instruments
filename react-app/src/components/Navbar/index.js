@@ -39,7 +39,9 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="navbarsearch__input"/>
-            <i onClick={(e) => handleSearch(e)} class="fas fa-search"></i>
+            <div className="navbarsearchbutton__container">
+              <i onClick={(e) => handleSearch(e)} class="fas fa-search"></i>
+            </div>
           </form>
         </div>
         {!authenticated && (
