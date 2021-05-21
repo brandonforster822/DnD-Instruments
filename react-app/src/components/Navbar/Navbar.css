@@ -62,14 +62,20 @@
     margin-right: 20px;
     margin-left: 20px;
     overflow: hidden;
+    width: 95%;
 }
 .navbarsearchbutton__container {
   background-color: black;
-  height: 40px;
-  width: 40px;
+  height: 54px;
+  width: 60px;
   position: absolute;
-  right: 0px;
-  top: 13px;
+  right: 10px;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+  overflow: hidden;
 }
 .navbarsearch__container i {
     cursor: pointer;
