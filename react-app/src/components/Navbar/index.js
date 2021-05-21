@@ -30,6 +30,9 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
   return (
     <div className="navbar">
       <div className="navbar__container">
+        <div className="navbarheader__container" >
+          <h1 onClick={() => history.push('/')}>DnD Instruments</h1>
+        </div>
         <div className="navbarsearch__container">
           <form className="navbarsearch__form">
             <input type="text"
@@ -38,9 +41,6 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
             className="navbarsearch__input"/>
             <i onClick={(e) => handleSearch(e)} class="fas fa-search"></i>
           </form>
-        </div>
-        <div className="navbarheader__container" >
-          <h1 onClick={() => history.push('/')}>DnD Instruments</h1>
         </div>
         {!authenticated && (
           <div className="navbaraccount__container">

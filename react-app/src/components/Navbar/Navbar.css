@@ -37,7 +37,7 @@
     border: none;
     background-color: #BAD9B5;
     height: 50px;
-    width: 300px;
+    width: 95%;
     border-radius: 50px;
     outline: none;
     padding-left: 10px;
@@ -46,8 +46,6 @@
 }
 
 .navbarsearch__container {
-    display: flex;
-    align-items: center;
     position: relative;
     margin-right: 20px;
 }
