@@ -43,11 +43,17 @@
     padding-left: 10px;
     font-weight: bold;
     border: 1px solid lightgrey;
+    transition: .5s;
 }
 
 .navbarsearch__input:hover{
   border-color: grey;
-  transition: 1s;
+  transition: .5s;
+}
+.navbarsearch__input:focus{
+  border-color: black;
+  background-color: white;
+  transition: .5s;
 }
 .navbarsearch__container {
     position: relative;
