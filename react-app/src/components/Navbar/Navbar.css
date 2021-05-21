@@ -42,17 +42,22 @@
     outline: none;
     padding-left: 10px;
     font-weight: bold;
-    
+    border: 1px solid lightgrey;
 }
 
+.navbarsearch__input:hover{
+  border-color: grey;
+  transition: 1s;
+}
 .navbarsearch__container {
     position: relative;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
 .navbarsearch__container i {
     position: absolute;
-    right: 100px;
+    right: 60px;
     bottom: 17px;
     cursor: pointer;
 }
