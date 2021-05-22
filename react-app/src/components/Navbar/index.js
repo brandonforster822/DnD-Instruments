@@ -44,17 +44,6 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
             </div>
           </form>
         </div>
-        {!authenticated && (
-          <div className="navbaraccount__container">
-          <p onClick={() => toggle(!open)}>Account</p>
-        </div>
-        )}
-        {authenticated && (
-          <div className="navbaraccount__container">
-          <p onClick={() => toggle(!open)}>Hello, {sessionUsername}</p>
-        </div>
-        )}
-        
         {open && !authenticated && (
             <div className="dropdown__menu">
               <ul className="dropdown__list">
@@ -76,6 +65,9 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
               </ul>
             </div>
           )}
+      </div>
+      <div className="menu__container">
+        <i onClick={toggle} class="fas fa-bars fa-2x"></i>
       </div>
     </div>
   );
