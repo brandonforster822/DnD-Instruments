@@ -14,9 +14,9 @@
 }
 .navbar__container{
     height: 100px;
-    margin: 0 10% 0 10%;
+    margin: 0;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 25% 50% 20% 5%;
     justify-content: space-between;
     justify-items: center;
     align-items: center;
@@ -24,9 +24,10 @@
 
 .navbarheader__container > h1{
     font-family: 'MedievalSharp', cursive;
-    font-size: 40px;
+    font-size: 50px;
     text-shadow: 5px 5px 10px;
     cursor: pointer;
+    margin: 0;
 }
 
 .navbarheader__container > h1:hover{
@@ -64,7 +65,6 @@
     position: relative;
     margin-right: 20px;
     margin-left: 20px;
-    overflow: hidden;
     width: 95%;
 }
 .navbarsearchbutton__container {

@@ -30,6 +30,12 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
   return (
     <div className="navbar">
       <div className="navbar__container">
+        {!authenticated && (
+          <div>
+            <h1>New?</h1>
+            <button>Sign up here!</button>
+          </div>
+        )}
         <div className="navbarheader__container" >
           <h1 onClick={() => history.push('/')}>DnD Instruments</h1>
         </div>
