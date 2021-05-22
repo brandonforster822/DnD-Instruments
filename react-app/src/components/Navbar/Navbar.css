@@ -73,13 +73,18 @@
   top: 0px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding-right: 20px;
   overflow: hidden;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  cursor: pointer;
 }
 .navbarsearch__container i {
     cursor: pointer;
     color: white;
+    right: 35px;
+    position: absolute;
 }
 
 .navbaraccount__container {
