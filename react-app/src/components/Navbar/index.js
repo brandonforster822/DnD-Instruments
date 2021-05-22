@@ -33,7 +33,6 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
         {!authenticated && (
           <div>
             <h1>New?</h1>
-            <button>Sign up here!</button>
           </div>
         )}
         <div className="navbarheader__container" >
