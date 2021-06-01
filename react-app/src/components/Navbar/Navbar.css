@@ -45,7 +45,7 @@
     border: none;
     background-color: #BAD9B5;
     height: 50px;
-    width: 95%;
+    width: 460px;
     border-radius: 50px;
     outline: none;
     padding-left: 10px;
@@ -54,6 +54,7 @@
     border: 1px solid black;
     transition: .5s;
     padding-left: 20px;
+    
 }
 
 .navbarsearch__input:focus{
@@ -62,7 +63,6 @@
   transition: .5s;
 }
 .navbarsearch__container {
-    position: relative;
     margin-right: 20px;
     margin-left: 20px;
     width: 95%;
@@ -72,7 +72,7 @@
   height: 54px;
   width: 60px;
   position: absolute;
-  right: 10px;
+  right: 0px;
   top: 0px;
   display: flex;
   align-items: center;
@@ -89,7 +89,9 @@
     right: 35px;
     position: absolute;
 }
-
+.navbarsearch__form {
+  position: relative;
+}
 
 .navbaraccount__container {
     display: flex;

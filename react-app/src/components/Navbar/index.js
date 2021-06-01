@@ -36,6 +36,11 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
             <button>Sign up here!</button>
           </div>
         )}
+        {authenticated && (
+          <div>
+            <h1>Welcome, {sessionUsername}</h1>
+          </div>
+        )}
         <div className="navbarheader__container" >
           <h1 onClick={() => history.push('/')}>DnD Instruments</h1>
         </div>
