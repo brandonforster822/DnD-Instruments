@@ -27,6 +27,16 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
     dispatch(openLogin())
   }
 
+  const handleOpenDropDown = () => {
+    if(open===false){
+      document.getElementById('dropdown').style.width = '250px'
+      toggle(!open)
+    } else {
+      document.getElementById('dropdown').style.width = '0px'
+      toggle(!open)
+    }
+  }
+
   return (
     <div className="navbar">
       <div className="navbar__container">
@@ -55,15 +65,15 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
             </div>
           </form>
         </div>
-        {open && !authenticated && (
-            <div className="dropdown__menu">
+        {!authenticated && (
+            <div className="dropdown__menu" id="dropdown">
               <ul className="dropdown__list">
                 <p onClick={() => handleOpenLogin()}>Log in</p>
                 <p onClick={() => dispatch(openSignup())}>Sign up</p>
               </ul>
             </div>
           )}
-          {open && authenticated && (
+          {authenticated && (
             <div className="dropdown__menu">
               <ul className="dropdown__list">
                 <p>
@@ -78,7 +88,12 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
           )}
       </div>
       <div className="menu__container">
-        <i onClick={toggle} class="fas fa-bars fa-2x"></i>
+        {!open && (
+          <i onClick={handleOpenDropDown} class="fas fa-bars fa-2x"></i>
+        )}
+        {open && (
+          <i onClick={handleOpenDropDown} class="fas fa-times fa-2x"></i>
+        )}
       </div>
     </div>
   );

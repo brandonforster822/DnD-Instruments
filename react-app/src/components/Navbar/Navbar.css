@@ -5,18 +5,19 @@
     z-index: 100;
 }
 .menu__container{
-  right: 0;
+  right: 10px;
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  top: 35px;
+  top: 37px;
   margin-right: 10px;
+  cursor: pointer;
 }
 .navbar__container{
     height: 100px;
     margin: 0;
     display: grid;
-    grid-template-columns: 25% 50% 20% 5%;
+    grid-template-columns: 35% 30% 30% 5%;
     justify-content: space-between;
     justify-items: center;
     align-items: center;
@@ -45,7 +46,7 @@
     border: none;
     background-color: #BAD9B5;
     height: 50px;
-    width: 460px;
+    width: 100%;
     border-radius: 50px;
     outline: none;
     padding-left: 10px;
@@ -65,6 +66,7 @@
 .navbarsearch__container {
     margin-right: 20px;
     margin-left: 20px;
+    margin-top: 5px;
     width: 95%;
 }
 .navbarsearchbutton__container {
@@ -72,7 +74,7 @@
   height: 54px;
   width: 60px;
   position: absolute;
-  right: 0px;
+  right: -25px;
   top: 0px;
   display: flex;
   align-items: center;
@@ -91,6 +93,7 @@
 }
 .navbarsearch__form {
   position: relative;
+  width: 85%;
 }
 
 .navbaraccount__container {
@@ -124,36 +127,40 @@
   }
   
   .dropdown__menu {
-    width: 130px;
+    width: 0px;
+    height: 100vh;
     position: absolute;
     display: flex;
-    right: 525px;
-    top: 90px;
+    right: -5px;
+    top: 0px;
     border: 1px solid white;
-    border-radius: 20px;
     background-color: white;
     box-shadow: 0px 0px 10px 0.1px #484848;
+    transition: .5s;
   }
   
   .dropdown__list {
     font-family: Raleway;
     /* padding: 0 20px 0 20px; */
     padding: 0;
+    width: 100%;
+    margin-top: 80px;
   }
   
   .dropdown__list > p {
     margin: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     cursor: pointer;
-    width: 130px;
+    width: 100%;
+    font-size: 25px;
   }
   .dropdown__list > button {
     margin: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
-    width: 130px;
+    width: 100%;
     border: none;
     background-color: white;
     outline: none;
