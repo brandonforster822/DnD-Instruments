@@ -80,7 +80,7 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
                   Account
                 </p>
                 <LogoutButton
-                  authenticated={setAuthenticated}
+                  authenticated={authenticated}
                   setAuthenticated={setAuthenticated}
                 />
               </ul>
