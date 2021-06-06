@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 .navbar__container{
-    height: 100px;
+    height: 0px;
     margin: 0;
     display: grid;
     grid-template-columns: 35% 30% 30% 5%;
