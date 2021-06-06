@@ -52,7 +52,7 @@ const NavBar = ({ authenticated, setAuthenticated, loaded, setLoaded }) => {
           </div>
         )}
         <div className="navbarheader__container" >
-          <h1 onClick={() => history.push('/')}>DnD Instruments</h1>
+          <h1 onClick={() => history.push('/')}>Instruments</h1>
         </div>
         <div className="navbarsearch__container">
           <form className="navbarsearch__form">
