@@ -61,7 +61,7 @@
 .navbarsearch__input:focus{
   border-color: black;
   background-color: white;
-
+  transition: .5s;
 }
 .navbarsearch__container {
     margin-right: 20px;
